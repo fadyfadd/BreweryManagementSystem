@@ -1,12 +1,11 @@
 ﻿using System;
 namespace BreweryManagementSystem.DataContext
 {
-	public class DataAccessLayer : IDataAccessLayer
+	public class BusinessLayer : IBusinessLayer
 	{
-		public DataAccessLayer()
+		public BusinessLayer()
 		{
 		}
 	}
 }
-
 

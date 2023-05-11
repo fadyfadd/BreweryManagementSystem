@@ -16,8 +16,8 @@ use BreweryManagementSystem
 create table Beer    (
     Id INT IDENTITY(1,1),
     [Name] NVARCHAR(100) UNIQUE,
-    WholeSalerPrice Numeric(10,2),
-    ClientPrice Numeric(10,2)
+    WholeSalePrice Numeric(10,2),
+    RetailPrice Numeric(10,2)
     primary key (id)
 )
 
@@ -63,3 +63,12 @@ create table WholeSaler_Stock(
 
 alter table WholeSaler_Stock add CONSTRAINT FK_WholeSaler_Stock_1 FOREIGN KEY(DefinedBeerId) REFERENCES wholeSaler_Beer(Id)
 alter table wholeSaler_Beer add CONSTRAINT UC_WholeSaler_Stock_2 UNIQUE(BeerId , WholeSalerId)
+
+insert into Brewery(Name) VALUES('3 Brasseurs');
+insert into Brewery(Name) VALUES('Beirut Micro Brasserie')
+
+insert into Beer(Name , WholeSalePrice , RetailPrice) VALUES('Blonde' , 10 , 12);
+insert into Beer(Name , WholeSalePrice , RetailPrice) VALUES('Brune' , 11 , 13);
+
+insert into Brewery_Beer(BeerId , BreweryId) VALUES(1 ,1);
+insert into Brewery_Beer(BeerId , BreweryId) VALUES(2 ,2);

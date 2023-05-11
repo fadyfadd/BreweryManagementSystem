@@ -1,22 +1,23 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using BreweryManagementSystem.DataContext.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BreweryManagementSystem.DataContext.EntityConfiguration
 {
-    public class BeerConfiguration : IEntityTypeConfiguration<BeerDo>
+    public class BreweryBeerConfiguration : IEntityTypeConfiguration<BreweryBeerDo>
     {
-        public BeerConfiguration()
+        public BreweryBeerConfiguration()
         {
         }
 
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<BeerDo> builder)
+        public void Configure(EntityTypeBuilder<BreweryBeerDo> builder)
         {
-            builder.ToTable("Beer");
+            builder.ToTable("Brewery_Beer");
             builder.HasKey(p => p.Id);
-            builder.Property(p => p.Name).HasColumnName("Name");
-            builder.Property(p => p.RetailPrice).HasColumnName("RetailPrice");
-            builder.Property(p => p.WholeSalePrice).HasColumnName("WholeSalePrice");          
+            builder.Property(p => p.BeerId).HasColumnName("BeerId");
+            builder.Property(p => p.BreweryId).HasColumnName("BreweryId");
+            
         }
     }
 }
-

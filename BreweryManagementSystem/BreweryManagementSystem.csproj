@@ -20,10 +20,14 @@
     <None Remove="DataContext\" />
     <None Remove="Infrastructure\" />
     <None Remove="Database\" />
+    <None Remove="DataContext\EntityConfiguration\" />
+    <None Remove="DataContext\Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataContext\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Database\" />
+    <Folder Include="DataContext\EntityConfiguration\" />
+    <Folder Include="DataContext\Entities\" />
   </ItemGroup>
 </Project>

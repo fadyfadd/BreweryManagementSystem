@@ -7,7 +7,7 @@ namespace BreweryManagementSystem.Infrastructure
 	{
 		public AutoMapperProfiles()
 		{
-			
+			 
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using BreweryManagementSystem.DataContext.Entities;
 namespace BreweryManagementSystem.DataContext
 {
     public class BreweryDto
