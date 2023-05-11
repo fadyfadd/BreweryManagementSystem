@@ -18,6 +18,16 @@ namespace BreweryManagementSystem.Infrastructure
 			return data; 
 
         }
+
+        public void InsertBeer(Int32 brewerId, String BeerName, Decimal WholeSalePrice, Decimal RetailPrice)
+        {
+			accessLayer.InsertBeer(brewerId, BeerName, WholeSalePrice, RetailPrice); 
+		}
+
+        public void DeleteBeer(Int32 brewerId, Int32 beerId)
+		{
+			accessLayer.DeleteBeer(brewerId, beerId);
+		}
     }
 }
 

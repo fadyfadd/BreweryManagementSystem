@@ -9,7 +9,7 @@ namespace BreweryManagementSystem.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class BaseApiController : ControllerBase
+    public class BaseApiController : Controller
     {
 
     }

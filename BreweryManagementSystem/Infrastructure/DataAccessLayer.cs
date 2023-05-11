@@ -36,6 +36,30 @@ namespace BreweryManagementSystem.Infrastructure
 		{		
 			this.context = context; 
 		}
-	}
+
+        public void InsertBeer(Int32 brewerId, String BeerName, Decimal WholeSalePrice, Decimal RetailPrice)
+        {
+            var b  = context.Breweries.Where(b => b.Id == brewerId).FirstOrDefault();
+            context.BreweryBeers.Add(new BreweryBeer() { Beer = new Beer() { Name = BeerName , WholeSalePrice = WholeSalePrice , RetailPrice = RetailPrice} , Brewery = b });
+            context.SaveChanges(); 
+        }
+
+        public void DeleteBeer(Int32 brewerId, Int32 beerId)
+        {
+            var b = context.BreweryBeers.Where(b => b.Brewery.Id == brewerId && b.Beer.Id == beerId).FirstOrDefault();
+
+            if (b != null)
+                context.BreweryBeers.Remove(b);
+
+            var c = context.Beers.Where(b => b.Id == beerId).FirstOrDefault();
+
+            if (c != null)
+                context.Beers.Remove(c); 
+
+            context.SaveChanges(); 
+
+        }
+
+    }
 }
 
