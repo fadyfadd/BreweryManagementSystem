@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace BreweryManagementSystem.Models;
 
 public partial class BreweryManagementSystemContext : DbContext
 {
-    public BreweryManagementSystemContext()
-    {
-    }
+    private AppSettings settings;
 
-    public BreweryManagementSystemContext(DbContextOptions<BreweryManagementSystemContext> options)
-        : base(options)
+    public BreweryManagementSystemContext(IOptions<AppSettings> settings)
     {
-    }
+        this.settings = settings.Value; 
+    } 
 
     public virtual DbSet<Beer> Beers { get; set; }
 
@@ -29,7 +28,7 @@ public partial class BreweryManagementSystemContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server=localhost,57000;user=sa;password=quLRYP22;database=BreweryManagementSystem;TrustServerCertificate=true");
+        => optionsBuilder.UseSqlServer(this.settings.ConnectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
