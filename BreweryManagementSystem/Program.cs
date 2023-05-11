@@ -1,5 +1,4 @@
-﻿using BreweryManagementSystem.DataContext;
-using BreweryManagementSystem.Infrastructure;
+﻿using BreweryManagementSystem.Infrastructure;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,13 +18,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-/*
-DataContext f = new DataContext();
-var l = f.Brewery.Include(p => p.Beers).ToList();
-var t = f.Beer.Include(p => p.Brewery).ToList(); 
-var y = f.Beer.ToList();
-var z = f.BreweryBeer.ToList(); 
-*/
+
+BreweryManagementSystem.Models.BreweryManagementSystemContext f = new BreweryManagementSystem.Models.BreweryManagementSystemContext();
+var x = f.Beers.ToList();
+
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

@@ -72,3 +72,7 @@ insert into Beer(Name , WholeSalePrice , RetailPrice) VALUES('Brune' , 11 , 13);
 
 insert into Brewery_Beer(BeerId , BreweryId) VALUES(1 ,1);
 insert into Brewery_Beer(BeerId , BreweryId) VALUES(2 ,2);
+
+
+
+dotnet ef dbcontext scaffold "server=localhost,57000;user=sa;password=quLRYP22;database=BreweryManagementSystem;TrustServerCertificate=true"   Microsoft.EntityFrameworkCore.SqlServer -o Models -f
