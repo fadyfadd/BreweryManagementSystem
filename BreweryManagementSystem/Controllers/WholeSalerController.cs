@@ -16,29 +16,6 @@ namespace BreweryManagementSystem.Controllers
            
           
         }
-
-        [HttpPost()]
-        public  ActionResult<List<String>> Index()
-        {
-           return new List<String>(); 
-        }
-
-
-        [HttpGet]
-        public ActionResult<List<String>> xxxx()
-        { 
-            return new List<String>();
-        }
-
-
-        [HttpGet("{id}")]
-        public ActionResult<List<String>> xxxxs()
-        {
-            return new List<String>();
-        }
-
-
-
     }
 }
 

@@ -23,6 +23,7 @@
   <ItemGroup>
     <None Remove="Infrastructure\" />
     <None Remove="Database\" />
+    <None Remove="DataTransferObjects\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infrastructure\" />

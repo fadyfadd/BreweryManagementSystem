@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("Settings"));
 builder.Services.AddScoped<IDataAccessLayer, DataAccessLayer>();
 builder.Services.AddScoped<IBusinessLogic,BusinessLogic>();
 builder.Services.AddScoped<BreweryManagementSystemContext>(); 

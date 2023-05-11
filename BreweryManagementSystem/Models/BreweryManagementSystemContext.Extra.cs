@@ -102,6 +102,12 @@ namespace BreweryManagementSystem.Models
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlServer(this.settings.ConnectionString);
+        }
+
     }
 }
 
